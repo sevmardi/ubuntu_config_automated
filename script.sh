@@ -2,7 +2,7 @@
 
 #Login as root before start
 apt-get update
-sudo apt-get install software-properties-common ansible git python-apt -y
+apt-get install software-properties-common ansible git python-apt -y
 
 apt-get upgrade -y
 
@@ -29,7 +29,7 @@ apt-get install seahorse
 apt-get install seahorse-nautilus 
 
 #tmux
-sudo apt-get install tmux
+apt-get install tmux
 
 
 #Double Commander
@@ -45,35 +45,35 @@ apt-get update
 apt-get install google-chrome-stable -y
 
 #Vagrant
-sudo apt-get install virtualbox
-sudo apt-get install vagrant
+apt-get install virtualbox
+apt-get install vagrant
 
 
 #Java
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt update; sudo apt install oracle-java8-installer
+add-apt-repository ppa:webupd8team/java
+apt update; apt install oracle-java8-installer
 
 
 #Smargit 
-sudo add-apt-repository ppa:eugenesan/ppa
-apt-get update; sudo apt-get install smartgit; 
+add-apt-repository ppa:eugenesan/ppa
+apt-get update; apt-get install smartgit; 
 
 # Node.js
-sudo apt-get install curl
+apt-get install curl
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
+apt-get install -y nodejs
 
 # Redis 
-# sudo apt-get install build-essential tcl
+# apt-get install build-essential tcl
 # cd /tmp
 # curl -O http://download.redis.io/redis-stable.tar.gz
 # tar xzvf redis-stable.tar.gz
 # cd redis-stable
 
 
-sudo add-apt-repository ppa:synapse-core/ppa 
-sudo apt-get update
-sudo apt-get install synapse
+add-apt-repository ppa:synapse-core/ppa 
+apt-get update
+apt-get install synapse
 
 
 #Docker
@@ -82,7 +82,10 @@ sudo apt-get install synapse
 # apt-get install vim htop iftop git curl -y
 
 
-
+#Sublime text 3
+echo "################################ Installing sublime-text-3 #########################################"
+add-apt-repository ppa:webupd8team/sublime-text-3 
+apt-get install sublime-text-installer
 
 
 
