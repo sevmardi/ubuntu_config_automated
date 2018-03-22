@@ -9,11 +9,12 @@ apt-get upgrade -y
 #KeePassX
 apt-get install keepassx -y
 
-
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list 
+#Spotify
+apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com BBEBDCB318AD50EC6865090613B00F1FD2C19886
-apt-get update
-apt-get install spotify-client -y
+sudo apt-get update
+sudo apt-get install spotify-client
 
 #Git
 apt-get install git -y
@@ -72,8 +73,7 @@ apt-get install -y nodejs
 
 
 add-apt-repository ppa:synapse-core/ppa 
-apt-get update
-apt-get install synapse
+apt-get update; apt-get install synapse;
 
 
 #Docker
@@ -85,9 +85,12 @@ apt-get install synapse
 #Sublime text 3
 echo "################################ Installing sublime-text-3 #########################################"
 add-apt-repository ppa:webupd8team/sublime-text-3 
-apt-get install sublime-text-installer
+apt-get update; apt-get install sublime-text-installer;
 
 
+#Thunderbird 
+add-apt-repository ppa:ubuntu-mozilla-security/ppa
+apt-get update; apt-get install thunderbird;
 
 
 
