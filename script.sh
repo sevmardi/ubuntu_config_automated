@@ -84,10 +84,18 @@ add-apt-repository ppa:ubuntu-mozilla-security/ppa
 apt-get update; apt-get install thunderbird;
 
 
+#Install gtop 
+npm install gtop -g
 
+#Install pip 
+apt-get install python-pip python-dev build-essential 
+apt-get install python-setuptools python-dev build-essential 
 
+#Install Scala 
 
+#Install Ruby 
 
+#Install GoLang
 
 
 
