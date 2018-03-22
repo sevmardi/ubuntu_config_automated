@@ -13,8 +13,7 @@ apt-get install keepassx -y
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
 apt-key adv --recv-keys --keyserver keyserver.ubuntu.com BBEBDCB318AD50EC6865090613B00F1FD2C19886
-sudo apt-get update
-sudo apt-get install spotify-client
+apt-get update && apt-get install spotify-client;
 
 #Git
 apt-get install git -y
@@ -32,28 +31,20 @@ apt-get install seahorse-nautilus
 #tmux
 apt-get install tmux
 
-
 #Double Commander
 add-apt-repository ppa:alexx2000/doublecmd
 apt-get update
 apt-get install doublecmd-qt
 
-
 #Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-apt-get update 
-apt-get install google-chrome-stable -y
-
-#Vagrant
-apt-get install virtualbox
-apt-get install vagrant
+apt-get update && apt-get install google-chrome-stable -y
 
 
 #Java
 add-apt-repository ppa:webupd8team/java
 apt update; apt install oracle-java8-installer
-
 
 #Smargit 
 add-apt-repository ppa:eugenesan/ppa
@@ -71,7 +62,7 @@ apt-get install -y nodejs
 # tar xzvf redis-stable.tar.gz
 # cd redis-stable
 
-
+#Synapse 
 add-apt-repository ppa:synapse-core/ppa 
 apt-get update; apt-get install synapse;
 
