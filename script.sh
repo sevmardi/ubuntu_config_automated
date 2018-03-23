@@ -1,6 +1,16 @@
 #!/bin/bash
 
+sleep 2
+clear
+
+
 #Login as root before start
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
+
+
 apt-get update
 apt-get install software-properties-common ansible git python-apt -y
 
@@ -40,7 +50,6 @@ apt-get install doublecmd-qt
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
 sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 apt-get update && apt-get install google-chrome-stable -y
-
 
 #Java
 add-apt-repository ppa:webupd8team/java
@@ -86,26 +95,29 @@ apt-get update; apt-get install thunderbird;
 npm install gtop -g
 
 #pip 
-apt-get install python-pip python-dev build-essential 
+apt-get install python-pip  python3-pip python-dev build-essential 
 apt-get install python-setuptools python-dev build-essential 
 
 #create virtuelenv & install django
+echo "################################ Installing virtualenv & Django #########################################"
 pip install virtualenv
 pip install -e django
 # pip install numpy 
 # pip install matplotlib
 
 #UNetbootin
+echo "################################ Installing UNetbootin #########################################"
 add-apt-repository ppa:gezakovacs/ppa
 apt-get update && apt-get install unetbootin
 
 #Wine 
 dpkg --add-architecture i386
 apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
-wget https://dl.winehq.org/wine-builds/Release.key && sudo apt-key add Release.key
+wget https://dl.winehq.org/wine-builds/Release.key && apt-key add Release.key
 apt-get update && apt-get install winehq-stable
 
 #Screen
+echo "################################ Installing Screen #########################################"
 apt-get install screen
 
 
@@ -116,6 +128,9 @@ apt-get install screen
 #Install GoLang
 
 
+#MySQL
+echo "################################ Installing MySQL #########################################"
+apt-get install mysql-server
 
 
 
@@ -128,3 +143,5 @@ apt-get install screen
 apt-get update
 apt-get upgrade
 apt-get dist-upgrade
+apt-get autoclean && apt-get clean
+
