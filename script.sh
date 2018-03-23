@@ -78,18 +78,36 @@ echo "################################ Installing sublime-text-3 ###############
 add-apt-repository ppa:webupd8team/sublime-text-3 
 apt-get update; apt-get install sublime-text-installer;
 
-
 #Thunderbird 
 add-apt-repository ppa:ubuntu-mozilla-security/ppa
 apt-get update; apt-get install thunderbird;
 
-
-#Install gtop 
+#gtop 
 npm install gtop -g
 
-#Install pip 
+#pip 
 apt-get install python-pip python-dev build-essential 
 apt-get install python-setuptools python-dev build-essential 
+
+#create virtuelenv & install django
+pip install virtualenv
+pip install -e django
+# pip install numpy 
+# pip install matplotlib
+
+#UNetbootin
+add-apt-repository ppa:gezakovacs/ppa
+apt-get update && apt-get install unetbootin
+
+#Wine 
+dpkg --add-architecture i386
+apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
+wget https://dl.winehq.org/wine-builds/Release.key && sudo apt-key add Release.key
+apt-get update && apt-get install winehq-stable
+
+#Screen
+apt-get install screen
+
 
 #Install Scala 
 
