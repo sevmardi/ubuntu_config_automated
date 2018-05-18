@@ -108,13 +108,15 @@ pip install -e django
 #UNetbootin
 echo "################################ Installing UNetbootin #########################################"
 add-apt-repository ppa:gezakovacs/ppa
-apt-get update && apt-get install unetbootin
+apt-get update 
+apt-get install unetbootin
 
 #Wine 
 dpkg --add-architecture i386
 apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
 wget https://dl.winehq.org/wine-builds/Release.key && apt-key add Release.key
-apt-get update && apt-get install winehq-stable
+apt-get update 
+apt-get install winehq-stable
 
 #Screen
 echo "################################ Installing Screen #########################################"
@@ -132,11 +134,22 @@ apt-get install screen
 echo "################################ Installing MySQL #########################################"
 apt-get install mysql-server
 
+#VLC
+echo "################################ Installing VLC #########################################"
+sudo apt-get install vlc browser-plugin-vlc
+
+#php
+echo "################################ Installing PHP #########################################"
+add-apt-repository ppa:ondrej/php
+apt-get update
+apt-get install php7.1
 
 
-
-
-
+#Composer
+echo "################################ Installing Composer #########################################"
+apt-get install curl
+curl -s https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
 
 
 #Upgrade all
