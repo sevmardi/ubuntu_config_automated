@@ -17,16 +17,16 @@ apt-get install software-properties-common ansible git python-apt -y
 apt-get upgrade -y
 
 #KeePassX
-apt-get install keepassx -y
+#apt-get install keepassx -y
 
 #Spotify
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
-echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-apt-key adv --recv-keys --keyserver keyserver.ubuntu.com BBEBDCB318AD50EC6865090613B00F1FD2C19886
-apt-get update && apt-get install spotify-client;
+#apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 0DF731E45CE24F27EEEB1450EFDC8610341D9410
+#echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+#apt-key adv --recv-keys --keyserver keyserver.ubuntu.com BBEBDCB318AD50EC6865090613B00F1FD2C19886
+#apt-get update && apt-get install spotify-client;
 
 #Git
-apt-get install git -y
+#apt-get install git -y
 
 
 #Atom
@@ -136,7 +136,7 @@ apt-get install mysql-server
 
 #VLC
 echo "################################ Installing VLC #########################################"
-sudo apt-get install vlc browser-plugin-vlc
+apt-get install vlc browser-plugin-vlc
 
 #php
 echo "################################ Installing PHP #########################################"
@@ -150,6 +150,10 @@ echo "################################ Installing Composer #####################
 apt-get install curl
 curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
+
+#Composer
+echo "################################ Installing Docker #########################################"
+apt install docker.io
 
 
 #Upgrade all
