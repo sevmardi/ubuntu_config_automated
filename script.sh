@@ -151,9 +151,17 @@ apt-get install curl
 curl -s https://getcomposer.org/installer | php
 mv composer.phar /usr/local/bin/composer
 
-#Composer
+#Docker
 echo "################################ Installing Docker #########################################"
 apt install docker.io
+
+#postgreSQL
+echo "################################ Installing postgreSQL #########################################"
+apt install postgresql postgresql-contrib
+
+
+
+
 
 
 #Upgrade all
