@@ -129,7 +129,6 @@ apt-get install screen
 
 #Install GoLang
 
-
 #MySQL
 echo "################################ Installing MySQL #########################################"
 apt-get install mysql-server
@@ -160,7 +159,8 @@ echo "################################ Installing postgreSQL ###################
 apt install postgresql postgresql-contrib
 
 
-
+echo "################################ Installing unrar #########################################"
+apt install unrar
 
 
 
