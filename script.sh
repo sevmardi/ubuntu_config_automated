@@ -47,13 +47,16 @@ apt-get update
 apt-get install doublecmd-qt
 
 #Chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
-apt-get update && apt-get install google-chrome-stable -y
+# wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+# sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+# apt-get update && apt-get install google-chrome-stable -y
 
 #Java
+echo "################################ Installing Java #########################################"
 add-apt-repository ppa:webupd8team/java
+add-apt-repository ppa:linuxuprising/java
 apt update; apt install oracle-java8-installer
+apt install oracle-java11-installer
 
 #Smargit 
 add-apt-repository ppa:eugenesan/ppa
@@ -124,10 +127,19 @@ apt-get install screen
 
 
 #Install Scala 
+echo "################################ Installing Scala #########################################"
+echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
+sudo apt-get update
+sudo apt-get install sbt
 
 #Install Ruby 
 
 #Install GoLang
+echo "################################ Installing GoLang #########################################"
+wget -q https://storage.googleapis.com/golang/getgo/installer_linux
+chmod +x installer_linux 
+./installer_linux 
 
 #MySQL
 echo "################################ Installing MySQL #########################################"
