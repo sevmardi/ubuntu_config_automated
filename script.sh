@@ -6,7 +6,7 @@ clear
 
 #Login as root before start
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
+   echo "This script must be run as root"
    exit 1
 fi
 
@@ -35,8 +35,8 @@ apt-get update
 apt-get install atom
 
 #Enrytion GUI
-apt-get install seahorse 
-apt-get install seahorse-nautilus 
+apt-get install seahorse
+apt-get install seahorse-nautilus
 
 #tmux
 apt-get install tmux
@@ -47,7 +47,7 @@ apt-get update
 apt-get install doublecmd-qt
 
 #Chrome
-# wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+# wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 # sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 # apt-get update && apt-get install google-chrome-stable -y
 
@@ -58,67 +58,60 @@ add-apt-repository ppa:linuxuprising/java
 apt update; apt install oracle-java8-installer
 apt install oracle-java11-installer
 
-#Smargit 
+#Smargit
 add-apt-repository ppa:eugenesan/ppa
-apt-get update; apt-get install smartgit; 
+apt-get update; apt-get install smartgit;
 
 # Node.js
 apt-get install curl
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 apt-get install -y nodejs
 
-# Redis 
+# Redis
 # apt-get install build-essential tcl
 # cd /tmp
 # curl -O http://download.redis.io/redis-stable.tar.gz
 # tar xzvf redis-stable.tar.gz
 # cd redis-stable
 
-#Synapse 
-add-apt-repository ppa:synapse-core/ppa 
+#Synapse
+add-apt-repository ppa:synapse-core/ppa
 apt-get update; apt-get install synapse;
-
-
-#Docker
-# apt-get update
-# apt-get upgrade -y
-# apt-get install vim htop iftop git curl -y
-
 
 #Sublime text 3
 echo "################################ Installing sublime-text-3 #########################################"
-add-apt-repository ppa:webupd8team/sublime-text-3 
+add-apt-repository ppa:webupd8team/sublime-text-3
 apt-get update; apt-get install sublime-text-installer;
 
-#Thunderbird 
+#Thunderbird
 add-apt-repository ppa:ubuntu-mozilla-security/ppa
 apt-get update; apt-get install thunderbird;
 
-#gtop 
+#gtop
 npm install gtop -g
 
-#pip 
-apt-get install python-pip  python3-pip python-dev build-essential 
-apt-get install python-setuptools python-dev build-essential 
+#pip
+apt-get install python-pip  python3-pip python-dev build-essential
+apt-get install python-setuptools python-dev build-essential
 
 #create virtuelenv & install django
 echo "################################ Installing virtualenv & Django #########################################"
 pip install virtualenv
 pip install -e django
-# pip install numpy 
+# pip install numpy
 # pip install matplotlib
 
 #UNetbootin
 echo "################################ Installing UNetbootin #########################################"
 add-apt-repository ppa:gezakovacs/ppa
-apt-get update 
+apt-get update
 apt-get install unetbootin
 
-#Wine 
+#Wine
 dpkg --add-architecture i386
 apt-add-repository 'https://dl.winehq.org/wine-builds/ubuntu/'
 wget https://dl.winehq.org/wine-builds/Release.key && apt-key add Release.key
-apt-get update 
+apt-get update
 apt-get install winehq-stable
 
 #Screen
@@ -126,20 +119,20 @@ echo "################################ Installing Screen #######################
 apt-get install screen
 
 
-#Install Scala 
+#Install Scala
 echo "################################ Installing Scala #########################################"
 echo "deb https://dl.bintray.com/sbt/debian /" | sudo tee -a /etc/apt/sources.list.d/sbt.list
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2EE0EA64E40A89B84B2DF73499E82A75642AC823
 sudo apt-get update
 sudo apt-get install sbt
 
-#Install Ruby 
+#Install Ruby
 
 #Install GoLang
 echo "################################ Installing GoLang #########################################"
 wget -q https://storage.googleapis.com/golang/getgo/installer_linux
-chmod +x installer_linux 
-./installer_linux 
+chmod +x installer_linux
+./installer_linux
 
 #MySQL
 echo "################################ Installing MySQL #########################################"
@@ -183,4 +176,3 @@ apt-get update
 apt-get upgrade
 apt-get dist-upgrade
 apt-get autoclean && apt-get clean
-
