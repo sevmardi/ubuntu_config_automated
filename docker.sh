@@ -5,3 +5,13 @@ sudo apt-get update
 apt-cache policy docker-ce
 sudo apt-get install -y docker-ce
 sudo systemctl status docker
+
+# 
+# Additional Steps
+# Docker communicates via a UNIX socket that is owned by the root user. We can avoid having to type sudo by following these steps:
+
+sudo groupadd docker
+sudo usermod -aG docker $USER
+docker run --rm hello-world
+
+
